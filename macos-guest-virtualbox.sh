@@ -217,7 +217,7 @@ if [[ -n "$(cygcheck -V 2>/dev/null)" ]]; then
             cmd.exe /d /s /c call VBoxManage.exe "$@"
         }
     else
-        cmd_path_VBoxManage='E:\VirtualBox\VirtualBox.exe'
+        cmd_path_VBoxManage='E:\VirtualBox\VBoxManage.exe'
         echo "Can't find VBoxManage in PATH variable,"
         echo "checking ${cmd_path_VBoxManage}"
         if [[ -n "$(cmd.exe /d /s /c call "${cmd_path_VBoxManage}" -v 2>/dev/null)" ]]; then
@@ -240,7 +240,7 @@ elif [[ "$(cat /proc/sys/kernel/osrelease 2>/dev/null)" =~ [Mm]icrosoft ]]; then
             VBoxManage.exe "$@"
         }
     else
-        wsl_path_VBoxManage='/mnt/e/VirtualBox/VirtualBox.exe'
+        wsl_path_VBoxManage='/mnt/e/VirtualBox/VBoxManage.exe'
         echo "Can't find VBoxManage in PATH variable,"
         echo "checking ${wsl_path_VBoxManage}"
         if [[ -n "$("${wsl_path_VBoxManage}" -v 2>/dev/null)" ]]; then
